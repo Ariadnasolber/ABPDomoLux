@@ -1,0 +1,236 @@
+/*_________________________________Menu___________________________________*/
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2%;
+    height: 80px;
+    z-index: 2;
+  }
+  
+  ul{
+    list-style-type: none;
+  
+  }
+  .container {
+    position: relative; /* Contenedor padre */
+  }
+  .logo{
+    width: 90px;
+    align-items: center;
+    margin-left: 45%;
+  }
+  .logo-sm{
+    width: 80px;
+    align-items: center;
+    margin-right: 140px;
+  }
+  .logo:hover{
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .item{
+    margin: 0 15px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .itm2{
+    margin: 0 15px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .item:hover {
+    color: #ff994b;
+    cursor: pointer;
+  }
+  
+  #menu{
+    display: none;
+    
+  }
+  
+  .menu-icon{
+    width: 30px;
+  }
+  .menu-icon:hover{
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  label{
+    cursor: pointer; /* para cambiar la apariencia del cursor del mouse a un puntero */
+    display: none;
+  }
+  
+  .btn{
+    padding: 6px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+  
+  }
+  .btn2{
+    padding: 6px 20px;
+    border-radius: 5px;
+    background-color: #ff994b;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+  
+  }
+  
+  .btn:hover{
+    color:#ff994b;
+    transition: all 0.5s; /* Para agrandar el texto */
+    transform: scale(1.15);
+    cursor: pointer;
+  
+  }
+  
+  .btn2:hover{
+    color:#ff994b;
+    background-color: #fff;
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  
+  }
+  
+  .btn a, .btn2 a {
+    color: inherit;  
+    text-decoration: none; 
+  }
+  
+  @media(max-width:991px){ /* consulta de medios que aplica los estilos CSS dentro de las llaves solo cuando el ancho de la ventana del navegador es de los px espeificados o menos */
+    .menu{
+        padding: 30px;
+        margin: 0;
+    }
+  
+    label{
+        display: initial;
+    }
+  
+    .menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        background-color: #1f1f1fa6;
+        backdrop-filter: blur(40px);  
+    }
+
+    .item {
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+
+    .itm2{
+      font-size: 0;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .btn2 {
+      width: 150px;
+    }
+    .btn:hover{
+      color:#ff994b;
+      transition: all 0.5s; /* Para agrandar el texto */
+      transform: scale(1.15);
+      cursor: pointer;
+    }
+    
+    .btn2:hover{
+      color:#ff994b;
+      background-color: #fff;
+      transition: all 0.5s; 
+      transform: scale(1.15);
+      cursor: pointer;
+
+    }
+
+    .clock{
+      font-size: 15px;
+    }
+
+    .logo{
+      width: 90px;
+      align-items: center;
+      margin-left: 37%;
+    }
+
+  }
+  
+    #menu:checked ~ .menu {/* para mostrar un menú desplegable o un menú de navegación cuando se selecciona una casilla de verificación */
+        display: initial; /* Hace que la propiedad vuelva a su valor por defecto */
+    }
+  
+  
+  
+  /*_________________________________Reloj___________________________________*/
+  .container{
+    width: 200px;
+    height:50px;
+    position: absolute;/* El elemento se posicionará en relación a su contenedor más cercano con posición relativa o absoluta. Si no hay ninguno, se posicionará en relación al documento HTML. */
+    margin-top: 20px;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  .clock{
+    font-family: 'Inconsolata';
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-top: -7px;
+    color: #ffffff;
+    margin-left: 20px;
+  }
+  
+  /*Before & After (.container)______________________________________
+    borde recuadro color exterior*/
+  
+  
+  .clock span{
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.4vw;
+    left: 5px;
+  }
+  
+  .clock span::after{
+    font-size: 7px;
+    position: absolute;
+    bottom: -5px;
+    transform: translateX(-50%);
+  }

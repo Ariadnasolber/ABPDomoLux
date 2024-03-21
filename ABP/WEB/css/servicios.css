@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Julius+Sans+One&family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika+Negative:wght@300..700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.servicios {
+  width: auto; /* Ancho del div */
+  height: 951px; /* Altura del div */
+  margin-bottom: -32px;
+}
+
+.container-servicios {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.slider {
+    position: absolute;
+    inset: 0px 0px 0px 0px;
+}
+
+.slider .slides {
+    position: absolute;
+    top: 50%;
+    transform: translateY(40%);
+    width: 240px;
+    height: 260px;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    /*_____after__content_____*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    transform: translateY(0);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+}
+
+.slider .slides:nth-child(3) {
+    left: calc(50% + 240px);
+    background-size: cover;
+}
+
+.slider .slides:nth-child(4) {
+    left: calc(50% + 500px);
+    background-size: cover;
+}
+
+.slider .slides:nth-child(5) {
+    left: calc(50% + 760px);
+    background-size: cover;
+}
+
+/* __________________________ Botones slides __________________________ */
+.slide-buttons {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.slide-buttons span {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #536b7e41;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.slide-buttons span::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #f1ad61;
+    border-left: 2px solid #f1ad61;
+    transform: rotate(315deg) translate(2px, 2px);
+}
+
+.slide-buttons span:nth-child(2)::before {
+    transform: rotate(135deg) translate(2px, 2px);
+}
+
+.slide-buttons span:active {
+    transition: all 0.5s;
+    transform: scale(1.15);
+}
+
+/* _______________Contenido slides______________________________________________ */
+
+.content {
+    position: relative;
+    padding: 30px;
+    max-width: 800px;
+    transition: 0.25s;
+    transition-delay: 0s;
+    z-index: 100000;
+    opacity: 0;
+    background: #00000063;
+    border-radius: 10px;
+    margin-left: 30px;
+    }
+
+.content h2 {
+    font-size: 70px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.content p {
+    font-size: 20px;
+    color: #fff;
+}
+.content li {
+    font-size: 17px;
+    color: #fff;
+    list-style: circle;
+    text-align: left;
+    }
+.slider .slides:nth-child(1) .content,
+.slider .slides:nth-child(2) .content {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.5s;
+}
+
+/* A partir de aquí vamos a hacer que sea resposiva (se adapte a tamaño movil */
+@media (max-width: 900px) {
+.slider {
+    position: absolute;
+    inset: 0px 0px 0px 0px;
+}
+
+.slider .slides {
+    width: 100px;
+    height: 100px;
+    top: initial;
+    bottom: -50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.slider .slides:nth-child(1),
+.slider .slides:nth-child(2) {
+    top: initial;
+    bottom: 0px;
+}
+
+.slider .slides:nth-child(3) {
+    left: 0px;
+    visibility: hidden;
+}
+.slider .slides:nth-child(4) {
+    left: 120px;
+    visibility: hidden;
+
+}
+.slider .slides:nth-child(5) {
+    left: 240px;
+    visibility: hidden;
+
+}
+.slider .slides .content {
+    max-width: 85%;
+    justify-content: center;
+    text-align: center;
+}
+.content h2 {
+    font-size: 40px;
+}
+.content li {
+    font-size: 15px;
+}
+.slide-buttons {
+    margin-bottom: 10%;
+}
+}

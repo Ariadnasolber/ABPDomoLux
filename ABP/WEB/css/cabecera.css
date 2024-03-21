@@ -1,0 +1,220 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #151718;;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+/*_________________________________Principal___________________________________*/
+h1 {
+    font-size: 2em;
+    letter-spacing: 10px;
+  
+  }
+  .h1-sm {
+    font-size: 2em;
+    letter-spacing: 10px;
+  
+  }
+  
+  svg text {
+    font-family: Poppins;
+    letter-spacing: 10px;
+    stroke: #ffffff;
+    font-size: 9vw;
+    font-weight: 800;
+    stroke-width: 2;
+    animation: textAnimate 5s infinite alternate;
+    text-transform: uppercase;
+  }
+  .text-sm{
+    font-size: 13vw;
+  }
+  
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 20%;
+      fill: hsl(0, 0%, 90%);
+    }
+  
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffstet: -20%;
+      fill: hsla(189, 68%, 75%, 0%);
+    }
+  }
+  
+
+  .p-1 {
+    font-size: 1vw;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+  }
+  .p-1-sm {
+    visibility: hidden;
+  }
+  .p-2 {
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+  }
+  .p-2-sm {
+    visibility: hidden;
+  }
+  
+  .cabecera {
+    width: auto; /* Ancho del div */
+    height: 55vw; /* Altura del div */
+    background-image: url("/WEB/img/background_cabecera.jpg"); /* URL de la imagen */
+    background-size: 100%;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #fff; /* Color de texto blanco */
+    text-align: center;
+    font-size: larger;
+
+    margin: 0px;
+  }
+  .textocabecera {
+    padding-top: 320px;
+  }
+  .texto-cabecera-sm {
+    padding-top: 45vw;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.616);
+    margin-left: 20px;
+  }
+  
+  div.navBar {
+    font-size: smaller;
+    list-style: none;
+  
+    padding-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  
+  }
+  
+  .login{
+    position: fixed;
+    margin-top: 1vw;
+    margin-left: 3vw;
+    z-index: 1;
+  }
+  .login-sm{
+    margin-top: 2.5vw;
+  }
+  
+  .background-sm-cabecera {
+    width: auto; /* Ancho del div */
+    height:125vw;
+    background-image: url("/WEB/img/fondo_inicio_sm.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #ffffff; /* Color de texto blanco */
+    text-align: center;
+    font-size: larger;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  
+  
+  /*_________________________________BUTTONS___________________________________*/
+  .texto_url{
+    text-decoration: none;
+    color: #fff;
+  }
+  .texto_url:hover{
+    color: #13191a;
+    font-weight: 700;
+  }
+  .texto_url-sm{
+    font-size: 1.2vw;
+  }
+  .texto_url-sm:hover{
+    color: #13191a;
+    font-weight: 700;
+  }
+  
+  .button_index{
+    position: relative;
+    height: 3vw;
+    width: 11vw;
+    margin: 0 1.7vw;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(144, 178, 204, 0.11);
+    font-size: 0.7vw;
+    letter-spacing: 2px;
+    color: #13191a;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  
+  .button_index-sm{
+    position: relative;
+    height: 7vw;
+    width: 21vw;
+    margin: 0 1.7vw;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(144, 178, 204, 0.11);
+    font-size: 0.6vw;
+    letter-spacing: 2px;
+    cursor: pointer;
+  
+  }
+  
+  button:hover{
+    background: linear-gradient(40deg, #ffd298, #ffdaa9, #c7f6ff, #c7f6ff, #ffd298);
+    background-size: 400%;
+    text-decoration: #c7f6ff;
+  
+  }
+  
+  button:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 5px;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.5s;
+  
+  }
+  
+  button:hover:before{
+    opacity: 1;
+    z-index: -1;
+   
+  
+  }
+  button:hover{
+    z-index:1;
+    animation: glow 10s linear infinite;
+    
+   
+  
+    
+  }
+  
+  @keyframes glow {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;  
+    }
+  }
+  
+  

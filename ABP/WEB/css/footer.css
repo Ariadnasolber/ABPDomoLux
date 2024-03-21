@@ -1,0 +1,134 @@
+/*_________________________________Footer___________________________________*/
+
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: #242221;
+    text-align: center;
+    color: #f1f1f1;
+    padding: 20px;
+  }
+.logo_footer{
+    width: 9vw;
+    margin: 2vw;
+  }
+
+  .iconoTelef{
+    width: 1.5vw;
+    margin-right: 1vw;
+  }
+  .iconoTelef:hover{
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  
+  }
+  .iconoCorreo{
+    width: 1.9vw;
+    margin-right: 1vw;
+  }
+  .iconoCorreo:hover{
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  
+  }
+  .iconoIg{
+    width: 1.5vw;
+  }
+  .iconoIg:hover{
+    transition: all 0.5s; 
+    transform: scale(1.15);
+    cursor: pointer;
+  
+  }
+  .nom_footer{
+    font-size: 2vw;
+    letter-spacing: 4px;
+    margin: 0;
+    padding: 0;
+  }
+  .texto_copy{
+    margin-top: 1vw;
+    color: #646464;
+    font-size: 0.8vw;
+    padding: 0;
+  }
+  .icono_copy{
+    width: 0.8vw;
+    margin: 0.1vw;
+  }
+  
+  .socialContainer {
+    width: 2.8vw;
+    height: 2.8vw;
+    border-radius: 2px;
+    padding-top: 0.5vw;
+    background-color: rgba(44, 44, 44, 0.39);
+    display: inline-block;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    margin-left: 1vw;
+  }
+  .socialContainer-sm {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 2px;
+    padding-top: 0vw;
+    background-color: rgba(44, 44, 44, 0.39);
+    display: inline-block;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    margin-left: 1vw;
+  }
+  /* instagram*/
+  .containerOne:hover {
+    background-color: #d62976;
+    transition-duration: 0.3s;
+    
+  }
+  /* twitter*/
+  .containerTwo:hover {
+    background-color: #00acee;
+    transition-duration: 0.3s;
+  }
+  /* linkdin*/
+  .containerThree:hover {
+    background-color: #0072b1;
+    transition-duration: 0.3s;
+  }
+  /* Whatsapp*/
+  .containerFour:hover {
+    background-color: green;
+    transition-duration: 0.3s;
+  }
+  
+  .socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+  }
+  
+  .socialSvg {
+    width: 1vw;
+  }
+  
+  .socialSvg path {
+    fill: rgb(255, 255, 255);
+  }
+  
+  .socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.3s both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  

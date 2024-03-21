@@ -1,0 +1,87 @@
+/*_________________________________Quien Somos___________________________________*/
+.quien_somos{
+  width: 100%;
+  height: 50vw;
+  background-color: #151718;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: larger;
+  display: flex;
+}
+.background-sm-quien_somos {
+  height:90vw;
+}
+.quien_somos_contenido{
+  width: 70%;
+  height: 48vw;
+  margin: auto;
+}
+.quien_somos_contenido-sm{
+  margin-top:10vw;
+  height: 80vw;
+  width: 80%;
+}
+
+.cuadro_texto_quien_somos{
+  width: 40%;
+  height: 10vw;
+  background-color: #252525c7;
+  margin: 1.5vw;
+  border-radius: 3px;
+  position:absolute;
+  margin-left: 20vw;
+  margin-top: 6vw;
+  padding: 3vw;
+  text-align: right;
+  color:#eeeeee
+}
+.cuadro_texto_quien_somos-sm{
+  width: 60%;
+  height:19vw;
+  padding-left: 18vw;
+}
+.cuadro_texto_quien_somos2{
+  width: 40%;
+  height: 17vw;
+  background-color: #252525bb;
+  margin: 1.5vw;
+  border-radius: 3px;
+  position:absolute;
+  margin-left: 10vw;
+  padding: 3vw;
+  text-align: left;
+  color:#eeeeee;
+  margin-top: 3vw;
+}
+.cuadro_texto_quien_somos2-sm{
+  width: 60%;
+  height:32vw;
+  margin-left: 0;
+  padding-right: 19vw;
+}
+
+.imagen_quien_somos1{
+  width: 30%;
+  border-radius: 3px;
+  margin: 1.5vw;
+  z-index: 1;
+}
+.imagen_quien_somos2{
+  width: 30%;
+  border-radius: 5px;
+  margin: 1.5vw;
+  margin-left: 48vw;
+  z-index: 1;
+}
+.imagen_quien_somos1-sm{
+  width: 50%;
+}
+.imagen_quien_somos2-sm{
+  width: 50%;
+  margin-left: 40vw;
+}
+.texto_quien_somos{
+  font-size: 1vw;
+}
+.texto_quien_somos-sm{
+  font-size: 1.8vw;
+}

@@ -1,0 +1,147 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  background-image: url("/WEB/img/login1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffffc5;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(231, 170, 255, 0.267);
+}
+
+.login_box {
+  position: relative;
+  width: 450px;
+  backdrop-filter: blur(10px);
+  border-style: none;
+  border-radius: 15px;
+  padding: 7.5em 2.5em 4em 2.5em;
+  color: #ffffff;
+  box-shadow: 0px 0px 30px 10px rgba(152, 122, 142, 0.534);
+}
+
+.login-header {
+  position: absolute;
+  top: 0;
+  padding-top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 70px;
+
+}
+
+.login-header span {
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: 'Poppins';
+  text-transform: uppercase;
+}
+
+
+.input_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  padding-inline: 20px 50px;
+  border: 2px solid #ffffffc5;
+  border-radius: 30px;
+  outline: none;
+}
+
+#user {
+  margin-bottom: 10px;
+}
+
+
+
+
+.icon {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.input_box input::placeholder{
+  color: #ffffff;
+}
+
+.input-submit {
+  width: 100%;
+  height: 50px;
+  background: #ececec;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-submit:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+.register {
+  text-align: center;
+}
+
+.register a {
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 564px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .login_box {
+    padding: 7.5em 1.5em 4em 1.5em;
+  }
+}
