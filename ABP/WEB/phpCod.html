@@ -1,0 +1,128 @@
+<!--Index php-->
+<?php
+session_start();
+/*Se llama a dos archivos php*/
+	include("connection.php"); /*Archivo que alberga las credenciales para acceder al mysql*/
+	include("function.php"); /*Archivo con varias funciones*/
+	$user_data = check_login($con); /*Comprueba que el id sea genuino*/
+?>
+<!--Signup php-->
+<?php
+session_start();
+	include("connection.php");
+	include("function.php");
+	if($_SERVER['REQUEST_METHOD']== "POST") /*Si le llega una peticion post*/
+	{
+		$username = $_POST['username']; /*Se crea variables que guarde el nombre y contraseña*/
+		$password = $_POST['password'];
+		if(!empty($username)&& !empty($password) && !is_numeric($username))/*Entra si el usuario y contraseña no estan vacios ademas de no ser numerico el usuario*/
+		{
+			$user_id = random_num(20);/*Nueva variable que contendra la id, llama la funcion random_num*/
+			$query = "insert into usuarios (user_id,username,password) values ('$user_id','$username','$password')";/*Variable que contiene toda la sentencia SQL*/
+			mysqli_query($con,$query); /*Se envia la peticion a la base de datos, junto a las credenciales*/
+			header("Location: login.php");/*Redirige al usuario al login*/
+			die;/*Se termina la sesion*/
+		}else{/*Caso contrario da error*/
+			echo "Please enter some valid inforamtion";
+		}
+		
+	}
+?>
+<!--Login php-->
+<?php
+session_start();
+	include("connection.php");
+	include("function.php");
+	if($_SERVER['REQUEST_METHOD']== "POST")
+	{
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		
+		if(!empty($username)&& !empty($password) && !is_numeric($username))/*Entra si el usuario y contraseña no estan vacios ademas de no ser numerico el usuario*/
+		{
+			$query = "SELECT * FROM usuarios WHERE username = '$username' limit 1"; /*Sentencia SQL, sacara solamente un username*/
+			$result = mysqli_query($con,$query); /*Guarda el resultado de la peticion*/
+			if($result)
+			{
+				if($result && mysqli_num_rows($result) > 0) /*Si ambas devuelven verdadero*/
+				{
+					$user_data = mysqli_fetch_assoc($result);/*Se guarda las campos en array asociativo*/
+					if($user_data['password'] === $password) /*Se comprueba que la contraseña introducida sea igual que en el BDD*/
+					{	
+						$_SESSION['user_id'] = $user_data['user_id'];/*Se autentifica la sesion*/
+						header("Location: index.php"); /*Reenvia el usuario */
+						die;
+					}
+				}
+			}
+			echo "Wrong username or password";	
+			
+		}else{
+			echo "Please enter some valid inforamtion";
+		}
+		
+	}
+?>
+<!--Function php-->
+<?php
+include("connection.php");
+function check_login($con)
+{
+	if(isset($_SESSION['user_id'])) /*Si la sesion no esta vacia*/
+	{
+		$id = $_SESSION['user_id'];/*Guarda la id en una variable*/
+		//global $con;
+		$query = "SELECT * FROM usuarios WHERE user_id = '$id' LIMIT 1"; /*Guarda sentencia SQL*/
+		
+		$result = mysqli_query($con,$query); /*Guardar resultado de la peticion*/
+		if($result && mysqli_num_rows($result)> 0) 
+		{
+			$user_data = mysqli_fetch_assoc($result); /*Devuelve la id de la BDD*/
+			return $user_data;
+		}
+	}
+	
+}
+
+function random_num($length) /*Funcion que espera un dato*/
+{
+		$text = ""; /*String vacio*/
+		if($length < 5)
+		{
+			$length = 5; /*Si el length es menor a 5 igualar a 5*/
+		}
+		$len = rand(4,$length); /*Genera un codigo de num aleatorios que de minimo sera 4 y maximo el lentgh*/
+		for($i=0; $i<$len ; $i++)
+		{
+			$text .= rand(0,9); /*Genera la ID*/
+		}
+		return $text;
+}
+?>
+<!--Logout php-->
+<?php
+session_start();
+
+if(isset($_SESSION['user_id']))/*Comprueba si hay una sesion abierta*/
+{
+	unset($_SESSION['user_id']); /*Quitar la sesion*/
+}
+header("Location: index2.php"); /*Reenviar al usuario a otra pagina*/
+die;
+?>
+<!--Connection php-->
+<?php
+$dbhost = "localhost"; /*Las credenciales de la BDD*/
+$dbuser = "root";
+$dbpass = "";
+$dbname = "login_db";
+
+
+if($con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname)) /*Comprobar que se conecta correctamente*/
+{
+/*Aqui antes habia un echo para saber que se habia conectado*/
+} else{
+	die("failed connection"); /*Mensaje de error*/
+}
+?>
+
